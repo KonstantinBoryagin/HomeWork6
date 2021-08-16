@@ -28,7 +28,12 @@ public class Bank {
         Account account12 = new Account(client2, 355453);
         Account account13 = new Account(client3, 355451);
 
-        account13.print(account13.getAccounts());
+        account1.addAccount(new Account(client1, 354));
+        account1.addAccount(new Account(client2, 45234));
+        account1.addAccount(new Account(client3, 243));
+        account1.addAccount(new Account(client4, 35));
+
+        account1.print(account1.getAccounts());
 
 
         ListOfClients clientsList = new ListOfClients();

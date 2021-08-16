@@ -8,12 +8,17 @@ public class Account {
     private Client client;
     private int money;
     private HashMap<Integer, Account> accounts = new HashMap<>();
+    private HashMap<Account, Client> accounts1 = new HashMap<>();
     static int number = 0;
+
 
     public Account(Client client, int money) {
         this.client = client;
         this.money = money;
-        accounts.put(number, this);
+    }
+
+    public void addAccount(Account account) {
+        accounts.put(number, account);
         number++;
     }
 
@@ -22,14 +27,19 @@ public class Account {
     }
 
     public void print(HashMap<Integer, Account> accounts){
-        System.out.println(Arrays.asList(accounts));
+        for (Integer element: accounts.keySet()){
+            String key = element.toString();
+            String value = accounts.get(element).toString();
+            System.out.println(key + " " + value);
+        }
+
     }
-//    @Override
-//    public String toString() {
-//        return "Account{" +
-//                "client=" + client +
-//                ", money=" + money +
-//                ", accounts=" + accounts +
-//                '}';
-//    }
+    @Override
+    public String toString() {
+        return "Account{" +
+                "client=" + client +
+                ", money=" + money +
+                ", accounts=" + accounts +
+                '}';
+    }
 }
