@@ -11,4 +11,12 @@ public class Client {
         this.name = name;
         this.birthDate = birthDate;
     }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "name='" + name + '\'' +
+                ", birthDate=" + birthDate +
+                '}';
+    }
 }
