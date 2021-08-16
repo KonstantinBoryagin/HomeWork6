@@ -8,6 +8,8 @@ public class Bank {
     public static void main(String[] args) {
 
 
+
+
         Client client1 = new Client("Ivanov Ivan", LocalDate.of(2015, 10, 3));
         Client client2 = new Client("Lincoln Avram", LocalDate.of(1970, 12, 30));
         Client client3 = new Client("Gorbachev Michail", LocalDate.of(1954, 1, 28));
@@ -28,16 +30,16 @@ public class Bank {
         Account account12 = new Account(client2, 355453);
         Account account13 = new Account(client3, 355451);
 
-        account1.addAccount(new Account(client1, 354));
-        account1.addAccount(new Account(client2, 45234));
-        account1.addAccount(new Account(client3, 243));
-        account1.addAccount(new Account(client4, 35));
+//        account1.addAccount(new Account(client1, 354));
+//        account1.addAccount(new Account(client2, 45234));
+//        account1.addAccount(new Account(client3, 243));
+//        account1.addAccount(new Account(client4, 35));
+//
+//        account1.print(account1.getAccounts());
 
-        account1.print(account1.getAccounts());
-
-
-        ListOfClients clientsList = new ListOfClients();
-        ListOfAccounts accountsList = new ListOfAccounts();
+//
+//        ListOfClients clientsList = new ListOfClients();
+//        ListOfAccounts accountsList = new ListOfAccounts();
 
 
 

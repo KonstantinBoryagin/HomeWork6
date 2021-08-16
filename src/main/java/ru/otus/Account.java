@@ -1,28 +1,29 @@
 package ru.otus;
 
-import java.util.Arrays;
 import java.util.HashMap;
 
 public class Account {
 
     private Client client;
     private int money;
-    private HashMap<Integer, Account> accounts = new HashMap<>();
-    private HashMap<Account, Client> accounts1 = new HashMap<>();
-    static int number = 0;
-
+    private HashMap<Account, Client> accounts = new HashMap<>();
 
     public Account(Client client, int money) {
         this.client = client;
         this.money = money;
+        client.setClientAccount(this);
+        accounts.put(this, client);
     }
 
-    public void addAccount(Account account) {
-        accounts.put(number, account);
-        number++;
+    public Client getClient() {
+        return client;
     }
 
-    public HashMap<Integer, Account> getAccounts() {
+    public void addAccount(Account account, Client client) {
+        accounts.put(account, client);
+    }
+
+    public HashMap<Account, Client> getAccounts() {
         return accounts;
     }
 
@@ -34,12 +35,12 @@ public class Account {
         }
 
     }
+
     @Override
     public String toString() {
         return "Account{" +
                 "client=" + client +
                 ", money=" + money +
-                ", accounts=" + accounts +
                 '}';
     }
 }
