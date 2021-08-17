@@ -9,14 +9,11 @@ public class Account {
     public Account(Client client, int money) {
         this.client = client;
         this.money = money;
-        client.setClintAccounts(this);
     }
 
     @Override
     public String toString() {
-        return "Account{" +
-                "client=" + client +
-                ", money=" + money +
-                '}';
+        return "Счет: " + client +
+                ", доступно средств - " + money;
     }
 }

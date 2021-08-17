@@ -8,21 +8,22 @@ public class Client {
 
     private String name;
     private LocalDate birthday;
-    private List<Account> clientAccounts;
 
     public Client(String name, LocalDate birthday) {
         this.name = name;
         this.birthday = birthday;
-        clientAccounts = new ArrayList<>();
     }
 
-    public void setClintAccounts(Account account) {
-        clientAccounts.add(account);
+    @Override
+    public String toString() {
+        return "Клиент - '" + name + "\'";
     }
 
-    public List<Account> getClientAccounts() {
-        return clientAccounts;
+    public String getName() {
+        return name;
     }
 
-
+    public LocalDate getBirthday() {
+        return birthday;
+    }
 }
