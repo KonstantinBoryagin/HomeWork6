@@ -6,26 +6,22 @@ public class Account {
 
     private Client client;
     private int money;
-    private HashMap<Account, Client> accounts = new HashMap<>();
+
+
+    Manager manager = new Manager();
 
     public Account(Client client, int money) {
         this.client = client;
         this.money = money;
-        client.setClientAccount(this);
-        accounts.put(this, client);
+//        manager.setClientAccount(this);
+//        manager.addAccount(this, client);
     }
 
     public Client getClient() {
         return client;
     }
 
-    public void addAccount(Account account, Client client) {
-        accounts.put(account, client);
-    }
 
-    public HashMap<Account, Client> getAccounts() {
-        return accounts;
-    }
 
     public void print(HashMap<Integer, Account> accounts){
         for (Integer element: accounts.keySet()){
@@ -38,9 +34,8 @@ public class Account {
 
     @Override
     public String toString() {
-        return "Account{" +
-                "client=" + client +
-                ", money=" + money +
-                '}';
+        return "Счет " +
+                "клиент - " + client +
+                ", средства - " + money + " | \n";
     }
 }

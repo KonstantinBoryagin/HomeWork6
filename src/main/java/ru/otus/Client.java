@@ -9,20 +9,25 @@ public class Client {
 
     private String name;
     private LocalDate birthDate;
-    private List<Account> clientAccounts = new ArrayList<>();
+    private static List<Account> clientAccounts = new ArrayList<>();
+
+
+    Manager manager = new Manager();
 
 
 
     public Client(String name, LocalDate birthDate) {
         this.name = name;
         this.birthDate = birthDate;
+        clientAccounts = new ArrayList<>();
+        //manager.addClientToClients(this, new ArrayList<>());
     }
 
     public void setClientAccount(Account account) {
         clientAccounts.add(account);
     }
 
-    public List<Account> getClientAccounts() {
+    public static List<Account> getClientAccounts() {
         return clientAccounts;
     }
 
@@ -41,9 +46,7 @@ public class Client {
 
     @Override
     public String toString() {
-        return "Client{" +
-                "name='" + name + '\'' +
-                ", birthDate=" + birthDate +
-                '}';
+        return  "имя - '" + name + '\'' +
+                ", дата рождения - " + birthDate + " \\ ";
     }
 }
