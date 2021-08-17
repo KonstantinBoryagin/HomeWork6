@@ -1,6 +1,8 @@
 package ru.otus;
 
 
+import java.util.Objects;
+
 public class Account {
 
     private Client client;
@@ -13,7 +15,19 @@ public class Account {
 
     @Override
     public String toString() {
-        return "Счет: " + client +
-                ", доступно средств - " + money;
+        return "Счет: доступно средств - " + money;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Account)) return false;
+        Account account = (Account) o;
+        return money == account.money && client.equals(account.client);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(client);
     }
 }

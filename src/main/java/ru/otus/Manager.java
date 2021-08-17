@@ -10,6 +10,12 @@ public class Manager {
     private HashMap<Account, Client> accountBase = new HashMap<>();
     private List<Account> clientAccounts;
 
+    /**
+     * Создает клиента
+     * @param name - имя клиента
+     * @param birthdate - дата рождения
+     * @return клиента
+     */
     public Client addClient(String name, LocalDate birthdate) {
         Client client = new Client(name, birthdate);
         clientAccounts = new ArrayList<>();
@@ -17,6 +23,12 @@ public class Manager {
         return client;
     }
 
+    /**
+     * Создает счет для клиента
+     * @param client - клиент {@link Client#Client(String, LocalDate)}
+     * @param money - количество средств на счету
+     * @return - счет
+     */
     public Account addAccount(Client client, int money) {
         Account account = new Account(client, money);
         accountBase.put(account, client);
@@ -38,10 +50,4 @@ public class Manager {
         return accountBase.get(account);
     }
 
-    @Override
-    public String toString() {
-        return "Manager{" +
-                "clientAccounts=" + clientAccounts +
-                '}';
-    }
 }
