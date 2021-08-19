@@ -1,29 +1,20 @@
 package ru.otus;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
 
 public class Client {
 
     private String name;
-    private LocalDate birthDate;
-    private List<Account> clientAccounts = new ArrayList<>();
+    private LocalDate birthday;
 
-
-
-    public Client(String name, LocalDate birthDate) {
+    public Client(String name, LocalDate birthday) {
         this.name = name;
-        this.birthDate = birthDate;
+        this.birthday = birthday;
     }
 
-    public void setClientAccount(Account account) {
-        clientAccounts.add(account);
-    }
-
-    public List<Account> getClientAccounts() {
-        return clientAccounts;
+    @Override
+    public String toString() {
+        return "Клиент - '" + name + "\'";
     }
 
     @Override
@@ -31,19 +22,23 @@ public class Client {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Client client = (Client) o;
-        return name.equals(client.name) && birthDate.equals(client.birthDate);
+        return name.equals(client.name) && birthday.equals(client.birthday);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, birthDate);
+       // return Objects.hash(name, birthday);
+        int result1 = name == null ? 0 : name.hashCode();
+        int result2 = birthday == null ? 0 : birthday.hashCode();
+        int result = 31 * result1 + result2;
+        return result;
     }
 
-    @Override
-    public String toString() {
-        return "Client{" +
-                "name='" + name + '\'' +
-                ", birthDate=" + birthDate +
-                '}';
+    public String getName() {
+        return name;
+    }
+
+    public LocalDate getBirthday() {
+        return birthday;
     }
 }

@@ -5,55 +5,39 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 public class Bank {
+
+
+
     public static void main(String[] args) {
 
+        Manager manager = new Manager();
 
+        Client ivanov = manager.addClient("Ivanov Ivan", LocalDate.of(2015, 10, 3));
+        Client lincoln = manager.addClient("Lincoln Avram", LocalDate.of(1970, 12, 30));
+        Client gorbachev = manager.addClient("Gorbachev Michail", LocalDate.of(1954, 1, 28));
+        Client barak = manager.addClient("Barak Obama", LocalDate.of(1988, 5, 4));
+        Client laden = manager.addClient("Laden Osama", LocalDate.of(1973, 12, 13));
 
+        Account account1 = manager.addAccount(ivanov, 123);
+        Account account2 = manager.addAccount(lincoln, 233323);
+        Account account3 = manager.addAccount(gorbachev, 0);
+        Account account4 = manager.addAccount(barak, 567);
+        Account account5 = manager.addAccount(laden, 12568563);
+        Account account6 = manager.addAccount(ivanov, 123879);
+        Account account7 = manager.addAccount(gorbachev, 7890780);
+        Account account8 = manager.addAccount(barak, 1267863);
+        Account account9 = manager.addAccount(gorbachev, 126783);
+        Account account10 = manager.addAccount(ivanov, 167867823);
 
-        Client client1 = new Client("Ivanov Ivan", LocalDate.of(2015, 10, 3));
-        Client client2 = new Client("Lincoln Avram", LocalDate.of(1970, 12, 30));
-        Client client3 = new Client("Gorbachev Michail", LocalDate.of(1954, 1, 28));
-        Client client4 = new Client("Barak Obama", LocalDate.of(1988, 5, 4));
-        Client client5 = new Client("Laden Osama", LocalDate.of(1973, 12, 13));
+        System.out.println(manager.findClientAccounts(gorbachev));
+        System.out.println(manager.findClientAccounts(barak));
 
-        Account account1 = new Account(client1, 354);
-        Account account2 = new Account(client2, 45234);
-        Account account3 = new Account(client3, 243);
-        Account account4 = new Account(client4, 35);
-        Account account5 = new Account(client5, 2345);
-        Account account6 = new Account(client1, 4567);
-        Account account7 = new Account(client2, 3456);
-        Account account8 = new Account(client3, 3444);
-        Account account9 = new Account(client4, 1_000_000);
-        Account account10 = new Account(client5, 352156);
-        Account account11 = new Account(client1, 3587873);
-        Account account12 = new Account(client2, 355453);
-        Account account13 = new Account(client3, 355451);
+        System.out.println(manager.findClient(account4));
+        System.out.println(manager.findClient(account10));
 
-//        account1.addAccount(new Account(client1, 354));
-//        account1.addAccount(new Account(client2, 45234));
-//        account1.addAccount(new Account(client3, 243));
-//        account1.addAccount(new Account(client4, 35));
-//
-//        account1.print(account1.getAccounts());
-
-//
-//        ListOfClients clientsList = new ListOfClients();
-//        ListOfAccounts accountsList = new ListOfAccounts();
-
-
-
-
-
-//        clientsList.addClient(client1);
-//        clientsList.addClient(client2);
-//        clientsList.addClient(client3);
-//        clientsList.addClient(client4);
-//        clientsList.addClient(client5);
-//
-//        System.out.println(clientsList);
 
 
     }
+
 
 }
